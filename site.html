@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proxy Android - Download</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .navbar {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .navbar-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .navbar-logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        .navbar-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+        
+        .navbar-links a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+        
+        .navbar-links a:hover {
+            opacity: 0.8;
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 100px 20px;
+            text-align: center;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            animation: fadeInDown 0.8s ease;
+        }
+        
+        .hero p {
+            font-size: 20px;
+            opacity: 0.9;
+            margin-bottom: 30px;
+            animation: fadeInUp 0.8s ease 0.2s both;
+        }
+        
+        .btn-download {
+            background: #51cf66;
+            color: white;
+            padding: 15px 40px;
+            font-size: 18px;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: inline-block;
+            text-decoration: none;
+            animation: fadeInUp 0.8s ease 0.4s both;
+        }
+        
+        .btn-download:hover {
+            background: #40c057;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(81, 207, 102, 0.3);
+        }
+        
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 80px;
+        }
+        
+        .feature-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            transition: all 0.3s;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .feature-icon {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+        
+        .feature-card h3 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+        
+        .feature-card p {
+            color: #666;
+            font-size: 14px;
+        }
+        
+        .specs {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            margin-bottom: 60px;
+        }
+        
+        .specs h2 {
+            color: #333;
+            margin-bottom: 20px;
+            text-align: center;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #667eea;
+        }
+        
+        .specs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .spec-item {
+            padding: 15px;
+            background: #f9f9f9;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .spec-item strong {
+            color: #667eea;
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        .versions {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            margin-bottom: 60px;
+        }
+        
+        .versions h2 {
+            color: #333;
+            margin-bottom: 20px;
+            text-align: center;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #667eea;
+        }
+        
+        .version-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            transition: all 0.3s;
+        }
+        
+        .version-item:hover {
+            border-color: #667eea;
+            background: #f9f9f9;
+        }
+        
+        .version-info h3 {
+            color: #333;
+            margin-bottom: 5px;
+        }
+        
+        .version-info p {
+            color: #666;
+            font-size: 13px;
+        }
+        
+        .btn-download-version {
+            background: #667eea;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .btn-download-version:hover {
+            background: #5568d3;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+        
+        .faq {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            margin-bottom: 60px;
+        }
+        
+        .faq h2 {
+            color: #333;
+            margin-bottom: 20px;
+            text-align: center;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #667eea;
+        }
+        
+        .faq-item {
+            margin-bottom: 20px;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .faq-question {
+            background: #f9f9f9;
+            padding: 15px 20px;
+            cursor: pointer;
+            font-weight: 600;
+            color: #333;
+            transition: all 0.3s;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .faq-question:hover {
+            background: #f0f0f0;
+        }
+        
+        .faq-answer {
+            padding: 20px;
+            color: #666;
+            display: none;
+            background: white;
+            border-top: 1px solid #eee;
+        }
+        
+        .faq-answer.active {
+            display: block;
+        }
+        
+        .faq-toggle {
+            transition: transform 0.3s;
+        }
+        
+        .faq-toggle.active {
+            transform: rotate(180deg);
+        }
+        
+        .footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 80px;
+        }
+        
+        .footer p {
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 15px;
+            font-size: 13px;
+        }
+        
+        .footer-links a {
+            color: #aaa;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+        }
+        
+        .section-title {
+            font-size: 36px;
+            color: #333;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        @media (max-width: 768px) {
+            .navbar-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 32px;
+            }
+            
+            .hero p {
+                font-size: 16px;
+            }
+            
+            .version-item {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-logo">📱 Proxy Android</div>
+            <ul class="navbar-links">
+                <li><a href="#features">Recursos</a></li>
+                <li><a href="#versions">Versões</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="index.php">Painel</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>🚀 Proxy Android</h1>
+            <p>Aplicativo completo de proxy para Android com painel de controle web integrado</p>
+            <a href="#versions" class="btn-download">📥 Baixar Agora</a>
+        </div>
+    </section>
+    
+    <!-- Conteúdo Principal -->
+    <div class="container">
+        <!-- Recursos -->
+        <section id="features">
+            <h2 class="section-title">✨ Recursos</h2>
+            <div class="features">
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3>Seguro</h3>
+                    <p>Criptografia de ponta a ponta com autenticação segura</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Rápido</h3>
+                    <p>Conexão otimizada para máxima velocidade</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🎮</div>
+                    <h3>Fácil de Usar</h3>
+                    <p>Interface intuitiva e amigável para todos</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Painel Web</h3>
+                    <p>Gerencie proxies pelo navegador facilmente</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🔄</div>
+                    <h3>Múltiplos Proxies</h3>
+                    <p>Configure quantos proxies precisar</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3>Compatível</h3>
+                    <p>Funciona em qualquer dispositivo Android</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Especificações -->
+        <section class="specs">
+            <h2>📋 Especificações</h2>
+            <div class="specs-grid">
+                <div class="spec-item">
+                    <strong>Versão Mínima</strong>
+                    Android 5.0 (API 21)
+                </div>
+                <div class="spec-item">
+                    <strong>Tamanho</strong>
+                    ~50 MB
+                </div>
+                <div class="spec-item">
+                    <strong>Arquitetura</strong>
+                    ARM64 / ARM32
+                </div>
+                <div class="spec-item">
+                    <strong>Permissões</strong>
+                    Rede, Sistema
+                </div>
+            </div>
+        </section>
+        
+        <!-- Versões de Download -->
+        <section id="versions" class="versions">
+            <h2>📥 Versões Disponíveis</h2>
+            
+            <div class="version-item">
+                <div class="version-info">
+                    <h3>Proxy Android v1.0.0 (Estável)</h3>
+                    <p>✅ Versão recomendada | Lançada: 03/06/2026</p>
+                </div>
+                <a href="#download" class="btn-download-version">⬇️ Baixar APK</a>
+            </div>
+            
+            <div class="version-item">
+                <div class="version-info">
+                    <h3>Proxy Android v1.1.0 (Beta)</h3>
+                    <p>🔬 Novos recursos em teste | Lançada: 15/05/2026</p>
+                </div>
+                <a href="#download" class="btn-download-version">⬇️ Baixar APK</a>
+            </div>
+            
+            <div class="version-item">
+                <div class="version-info">
+                    <h3>Proxy Android v0.9.5 (Legado)</h3>
+                    <p>📦 Versão anterior | Lançada: 10/04/2026</p>
+                </div>
+                <a href="#download" class="btn-download-version">⬇️ Baixar APK</a>
+            </div>
+        </section>
+        
+        <!-- FAQ -->
+        <section id="faq" class="faq">
+            <h2>❓ Perguntas Frequentes</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>Como instalar o aplicativo?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <p>1. Baixe o arquivo APK do link acima<br>
+                    2. No seu dispositivo Android, ative "Instalar de fontes desconhecidas" em Configurações<br>
+                    3. Abra o arquivo APK com um gerenciador de arquivos<br>
+                    4. Toque em "Instalar" e aguarde a conclusão<br>
+                    5. Pronto! O aplicativo está instalado</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>Como acessar o painel web?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Após instalar, abra o aplicativo e acesse o painel web através de:<br>
+                    📱 <strong>http://localhost:8888</strong> no navegador do seu PC<br>
+                    Credenciais:<br>
+                    👤 Usuário: <strong>Proxy</strong><br>
+                    🔑 Senha: <strong>Android</strong></p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>Quais são os requisitos mínimos?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <p>✅ Android 5.0 ou superior<br>
+                    ✅ Mínimo 50 MB de espaço livre<br>
+                    ✅ Conexão com internet ativa<br>
+                    ✅ Acesso às permissões de rede</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>O aplicativo é seguro?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Sim! O Proxy Android usa criptografia de ponta a ponta e autenticação segura. Seu tráfego é protegido e privado. O código é auditável e não contém malware.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>Como reportar problemas?</span>
+                    <span class="faq-toggle">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Se encontrar algum bug ou problema, entre em contato através de:<br>
+                    📧 Email: support@proxyandroid.app<br>
+                    🐛 Issues: GitHub Proxy-android-</p>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2026 Proxy Android. Todos os direitos reservados.</p>
+        <div class="footer-links">
+            <a href="#privacy">Privacidade</a>
+            <a href="#terms">Termos</a>
+            <a href="#contact">Contato</a>
+            <a href="https://github.com">GitHub</a>
+        </div>
+    </footer>
+    
+    <script>
+        function toggleFAQ(element) {
+            const question = element;
+            const answer = question.nextElementSibling;
+            const toggle = question.querySelector('.faq-toggle');
+            
+            // Fechar outros
+            document.querySelectorAll('.faq-answer.active').forEach(el => {
+                if(el !== answer) {
+                    el.classList.remove('active');
+                    el.previousElementSibling.querySelector('.faq-toggle').classList.remove('active');
+                }
+            });
+            
+            // Toggle atual
+            answer.classList.toggle('active');
+            toggle.classList.toggle('active');
+        }
+        
+        // Scroll suave
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if(href !== '#' && href !== '#download') {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if(target) {
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

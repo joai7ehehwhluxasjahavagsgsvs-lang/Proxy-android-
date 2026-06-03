@@ -1,0 +1,20 @@
+# Ativar mod_rewrite
+RewriteEngine On
+
+# Remover arquivo index.php da URL
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php?url=$1 [QSA,L]
+
+# Proteger arquivos sensíveis
+<FilesMatch "(\.json|\.env|\.git)">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Headers de segurança
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-Frame-Options "SAMEORIGIN"
+    Header set X-XSS-Protection "1; mode=block"
+</IfModule>

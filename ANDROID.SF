@@ -1,0 +1,71 @@
+Signature-Version: 1.0
+Created-By: Android Gradle 8.0.2
+SHA-256-Digest-Manifest: 7+sOw3Sk93b89quEqkVdymTXedfVJLjcUfTL8ACTHKU=
+X-Android-APK-Signed: 2,3
+
+Name: AndroidManifest.xml
+SHA-256-Digest: Hk6nBmtZnwueHUISlgqRR5FGoVG6YtJb0sKUSq3837I=
+
+Name: MitmProxy/burpsuite-ca.crt
+SHA-256-Digest: Tc/CVWYArv8/ZjubfPnTwYqJUyC7THeDjMuFwcl6so0=
+
+Name: MitmProxy/charles-ssl-proxying.pem
+SHA-256-Digest: bwnLchJ8HXwxnCFTBL1X+PwVpp0NaSTPYx2q2pzT1n8=
+
+Name: MitmProxy/fiddler-root-cert.cer
+SHA-256-Digest: Qa1xDZiyxTxhXGuv2Op49S+UuRltsrVV7/6x7ukYu/E=
+
+Name: MitmProxy/mitmproxy-ca-cert.pem
+SHA-256-Digest: Bw0NvOH4Nf6oolxAthP3x8Mp0c2t2MCxpJnmFXf8KTA=
+
+Name: SSL-Bypass/pinning
+SHA-256-Digest: HirVK6hm99yuunEBgxEmLEbIxh0z821zF51AkLzvQpo=
+
+Name: SSL-Bypass/ssl
+SHA-256-Digest: 6wgNr76wDhNrZ50tp8WKQvKn6LgAvBrPLZqpQgC7VKY=
+
+Name: classes.dex
+SHA-256-Digest: Gd4ElqKlNC0GyjOR+ClVLenB4U+defAcjleub7y9SDE=
+
+Name: lib/arm64-v8a/libDRIR.so
+SHA-256-Digest: mPCZ2UzUzMHGxEpEIYfBjfVd0D5jL/qJiVxbzPbxbeM=
+
+Name: lib/arm64-v8a/libconscrypt_jni.so
+SHA-256-Digest: IqL5bBBRRJVPvMsP0EifYbHP+o4B8tho+aRnvro5I/I=
+
+Name: lib/arm64-v8a/libcrashlytics.so
+SHA-256-Digest: lY7ti3U0kk09VbLrS4VhTEISEja1fAbDneN3v2V8xFY=
+
+Name: lib/arm64-v8a/libn8x3k7.so
+SHA-256-Digest: ppxeehGF80oQdvhOkNwpDZj1U40UMSHeVEc7Bdo458U=
+
+Name: lib/arm64-v8a/libspake2.so
+SHA-256-Digest: E2ob4sgsJ/pDsgNMZHa+azUdhZpky7KCvAyKU8u0D9A=
+
+Name: lib/armeabi-v7a/libDRIR.so
+SHA-256-Digest: kcWxRwaiAh88+uic5Y4ms6y0auQYT3QZ9KbGJ97+pqI=
+
+Name: lib/armeabi-v7a/libconscrypt_jni.so
+SHA-256-Digest: n1plgEMEuGXvow/J6nG3lld84y5dTtfmhC5YCG6DQkg=
+
+Name: lib/armeabi-v7a/libcrashlytics.so
+SHA-256-Digest: J7aIWmI8aZnFqcBwGzuixonwGSSvyYMEnkZt9Y9/lSI=
+
+Name: lib/armeabi-v7a/libn8x3k7.so
+SHA-256-Digest: QbAPeqWCzL+M/zHE8NCN+MbgMDOq5gqyiIlVZv0K3eQ=
+
+Name: lib/armeabi-v7a/libspake2.so
+SHA-256-Digest: H1cj8wnBfNtLJJCHTms9FkZtXMOSGnphEHcJWE4/dOE=
+
+Name: res/drawable/ic_launcher.png
+SHA-256-Digest: dDe1SyUBY739anV1/3cYQu3ETiVHfiVWU6aAN8Tv0go=
+
+Name: res/layout/activity_main.xml
+SHA-256-Digest: wpzQd/PzQH/F7Lq4U9Rx7GtOWr6HSDJw17pJA14VCW8=
+
+Name: res/xml/jshshjkx.xml
+SHA-256-Digest: yQW4xXhVnDKcxEM8bCLEiumg4eCs8yZsMmnUAqBhhts=
+
+Name: resources.arsc
+SHA-256-Digest: QP+eYedg3oaasRPjGrZEA3T/+EYInEGRFlE+RbhCb/0=
+
